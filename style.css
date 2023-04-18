@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(90deg,#2873d4,#282cd4);
+    
+}
+.container{
+    padding: 8vh 1vw;
+    width: 80vw;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 5rem;
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.loading{
+    width: 5rem;
+    height: 5rem;
+    background: #282cd4;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: turn 3s infinite ease-in alternate;
+}
+@keyframes turn {
+    0%,50%,100%{
+        transform: rotate(0deg);
+    }
+    25%,75%{
+        transform: rotate(360deg);
+    }
+    
+}
+.loading::after{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    transform: translate(-100%, -100%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+   
+}
+.loading::before{
+    content: "";
+    width: 4rem;
+    height: 4rem;
+    background-color: white;
+    border-radius: 50%;
+}
+.form{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+#text{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #282cd4;
+    font-size: 1.2rem;
+    width: 80%;
+}
+
+#search{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 20%;
+    max-width: 48px;
+    background-color: transparent;
+}
+#search:active{
+    transform: scale(.9);
+}
+#search img{
+    width: 100%;
+}
+.results{
+    padding: 2vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-y: auto;
+}
+#word,#speak{
+    width: 70%;
+    margin-top: 2rem;
+}
+#speak{
+    width: 30%;
+    max-width: 48px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+#speak img{
+    width: 100%;
+}
+#pronounciation{
+    color: grey;
+    margin-bottom: 2rem;
+}
+#pronounciation,#def{
+    flex-basis: 100%;
+}
+#ex:before{
+    display: block;
+    content: "";
+    width: 1rem;
+    background-color: #2873d4;
+   
+}
+#ex{
+    display: flex;
+    gap: .5rem;
+}
+@media (max-width: 300px) {
+    #ex:before{
+        display: none;
+    }
+    #ex{
+        display: block;
+    }
+}
